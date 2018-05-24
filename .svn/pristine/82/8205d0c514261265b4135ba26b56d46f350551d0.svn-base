@@ -1,0 +1,7 @@
+jdbc=util.JDBCTemplate
+userDao=dao.impl.UserDaoImpl
+userService=service.impl.UserServiceImpl
+typeDao=dao.impl.ProductTypeDaoImpl
+typeService=service.impl.ProductTypeServiceImpl
+productDao=dao.impl.ProductDaoImpl
+productService=service.impl.ProductServiceImpl

@@ -1,0 +1,61 @@
+package action;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.MappingDispatchAction;
+
+import entity.Product;
+import entity.ProductType;
+import exception.ProductException;
+import exception.ProductTypeException;
+import factory.ObjectFactory;
+
+import service.IProductService;
+import service.IProductTypeService;
+
+public class ProductAction extends MappingDispatchAction{
+
+	private IProductTypeService typeService = (IProductTypeService) ObjectFactory.getObject("typeService");
+	private IProductService productService = (IProductService) ObjectFactory.getObject("productService");
+	
+	
+	public ActionForward toAddProduct(ActionMapping mapping, ActionForm form,
+				HttpServletRequest request, HttpServletResponse repsonHttpServletResponse){
+		List<ProductType> types = new ArrayList<ProductType>();
+		try {
+			types = typeService.findAllByStatus();
+			request.setAttribute("types", types);
+			return mapping.findForward("success");
+		} catch (ProductTypeException e) {
+			request.setAttribute("typeMsg", e.getMessage());
+			return mapping.findForward("fail");
+		}
+	}
+	public ActionForward addProduct(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse repsonHttpServletResponse){
+		
+		String name = request.getParameter("name");
+		double price = Double.parseDouble(request.getParameter("price"));
+		int typeId = Integer.parseInt(request.getParameter("typeId"));
+		
+		Product product = new Product();
+		product.setName(name);
+		product.setPrice(price);
+		product.setTypeId(typeId);
+		
+		try {
+			productService.addProduct(product);
+			return mapping.findForward("success");
+		} catch (ProductException e) {
+			request.setAttribute("typeMsg", e.getMessage());
+			return mapping.findForward("fail");
+		}
+	}
+}

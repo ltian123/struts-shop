@@ -1,0 +1,12 @@
+package dao;
+
+import entity.Product;
+
+public interface IProductDao {
+
+	/**
+	 * 
+	 * @param product
+	 */
+	public void insertProduct(Product product);
+}

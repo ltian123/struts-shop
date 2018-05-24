@@ -1,0 +1,25 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  </head>
+  
+  <body>
+    <h1>商品列表</h1>
+    <hr/>
+    
+    <table border="1">
+    	<tr>
+    		<!-- 只显示有效商品
+    			如果将商品类型状态改为禁用,则不显示所有该类型的商品的信息
+    		 -->
+    		<th>序号</th>
+    		<th>商品名称</th>
+    		<th>商品价钱</th>
+    		<th>商品类型</th><!-- 类型的名称 -->
+    		<th>操作</th>
+    	</tr>
+    </table>
+  </body>
+</html>

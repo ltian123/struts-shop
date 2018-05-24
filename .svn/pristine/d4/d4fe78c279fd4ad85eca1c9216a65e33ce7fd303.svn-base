@@ -1,0 +1,14 @@
+package service;
+
+import entity.Product;
+import exception.ProductException;
+
+public interface IProductService {
+
+	/**
+	 * ....
+	 * @param product
+	 * @throws ProductException 
+	 */
+	public void addProduct(Product product) throws ProductException;
+}

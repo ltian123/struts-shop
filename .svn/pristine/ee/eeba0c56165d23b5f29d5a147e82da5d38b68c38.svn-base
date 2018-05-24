@@ -1,0 +1,27 @@
+package dao;
+
+import java.util.List;
+
+import entity.ProductType;
+
+public interface IProductTypeDao {
+
+	/**
+	 * 根据类型名称查询类型信息
+	 * @param name
+	 * @return
+	 */
+	public ProductType selectTypeByName(String name);
+	
+	/**
+	 * 添加商品类型信息
+	 * @param type
+	 */
+	public void insertType(ProductType type);
+	
+	/**
+	 * 查询所有商品类型的信息
+	 * @return
+	 */
+	public List<ProductType> selectAll();
+}

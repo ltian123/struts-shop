@@ -1,0 +1,10 @@
+#Tue Oct 18 18:32:26 CST 2016
+eclipse.preferences.version=1
+encoding//src/exception/DataAccessException.java=UTF-8
+encoding//src/exception/ServiceException.java=UTF-8
+encoding//src/factory/ObjectFactory.java=UTF-8
+encoding//src/service=GBK
+encoding//src/service/impl/UserServiceImpl.java=GBK
+encoding//src/util/JDBCTemplate.java=GBK
+encoding//src/util/JDBCUtil.java=GBK
+encoding/<project>=GBK

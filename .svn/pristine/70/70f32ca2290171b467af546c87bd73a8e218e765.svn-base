@@ -1,0 +1,22 @@
+package service.impl;
+
+import dao.IProductDao;
+import entity.Product;
+import exception.ProductException;
+import factory.ObjectFactory;
+import service.IProductService;
+
+public class ProductServiceImpl implements IProductService{
+
+	private IProductDao productDao = (IProductDao) ObjectFactory.getObject("productDao");
+	
+	public void addProduct(Product product) throws ProductException {
+		//加上业务处理
+		if(product.getTypeId() == -1){
+			throw new ProductException("商品类型选择有误,请重新选择");
+		}
+		productDao.insertProduct(product);
+		
+	}
+
+}

@@ -1,0 +1,34 @@
+package service.impl;
+
+import java.util.List;
+
+import constant.TypeConstant;
+import dao.IProductTypeDao;
+import entity.ProductType;
+import exception.ProductTypeException;
+import factory.ObjectFactory;
+import service.IProductTypeService;
+
+public class ProductTypeServiceImpl implements IProductTypeService{
+
+	private IProductTypeDao typeDao = (IProductTypeDao) ObjectFactory.getObject("typeDao");
+	
+	public void addType(String name) throws ProductTypeException {
+		ProductType pt = typeDao.selectTypeByName(name);
+		if(pt != null){
+			throw new ProductTypeException("该类型已经存在");
+		}
+		ProductType type = new ProductType();
+		type.setName(name);
+		type.setStatus(TypeConstant.PRODUCT_TYPE_ENABLE);
+		typeDao.insertType(type);
+	}
+
+	public List<ProductType> findAll() throws ProductTypeException {
+		List<ProductType> types = typeDao.selectAll();
+		if(types != null){
+			return types;
+		}
+		throw new ProductTypeException("没有商品类型的信息,请先添加");
+	}
+}

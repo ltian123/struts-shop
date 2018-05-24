@@ -1,0 +1,3 @@
+jdbc=util.JDBCTemplate
+userDao=dao.impl.UserDaoImpl
+userService=service.impl.UserServiceImpl

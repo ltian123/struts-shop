@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/showRegist.do" location="50,50" dimension="114,70" />
+  <StrutsActivity path="/showLogin.do" location="350,50" dimension="110,70" />
+  <StrutsActivity path="/showMenu.do" location="650,50" dimension="111,70" />
+  <StrutsActivity path="/toAddType.do" location="650,450" dimension="112,70" />
+  <StrutsActivity path="/regist.do" location="950,250" dimension="143,104" />
+  <StrutsActivity path="/login.do" location="350,450" dimension="143,104" />
+  <StrutsActivity path="/addType.do" location="50,650" dimension="189,104" />
+  <StrutsActivity path="/findAllTypes.do" location="350,650" dimension="189,104" />
+  <StrutsActivity path="/toModifyType.do" location="50,850" dimension="189,104" />
+  <StrutsActivity path="/WEB-INF/pages/regist.jsp" location="950,50" dimension="188,53" />
+  <StrutsActivity path="/WEB-INF/pages/login.jsp" location="50,250" dimension="184,53" />
+  <StrutsActivity path="/WEB-INF/pages/menus.jsp" location="650,250" dimension="193,53" />
+  <StrutsActivity path="/WEB-INF/pages/addType.jsp" location="950,450" dimension="206,53" />
+  <StrutsActivity path="/WEB-INF/pages/productTypeManage.jsp" location="650,650" dimension="277,53" />
+  <StrutsActivity path="/WEB-INF/pages/modifyType.jsp" location="650,850" dimension="223,53" />
+  <StrutsActivity path="/WEB-INF/pages/menu.jsp" location="350,250" dimension="187,53" />
+  <StrutsActivity path="" location="50,450" dimension="32,53" />
+  <StrutsActivity path="/findAllTypes" location="350,850" dimension="107,53" />
+  <StrutsActivity path="/modifyType.do" location="950,850" dimension="189,104" />
+  <StrutsActivity path="/modifyStatus.do" />
+  <StrutsTransition id="/showLogin.do,null,/WEB-INF/pages/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,85" />
+      <AbsolutePoint location="179,85" />
+      <AbsolutePoint location="179,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addType.do,fail,/WEB-INF/pages/addType.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="172,650" />
+      <AbsolutePoint location="172,599" />
+      <AbsolutePoint location="1053,599" />
+      <AbsolutePoint location="1053,503" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/toModifyType.do,fail,/findAllTypes.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="144,902" />
+      <AbsolutePoint location="444,702" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/modifyType.do,success,/findAllTypes.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1023,850" />
+      <AbsolutePoint location="1023,808" />
+      <AbsolutePoint location="442,808" />
+      <AbsolutePoint location="442,754" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/modifyType.do,fail,/findAllTypes.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1053,850" />
+      <AbsolutePoint location="1053,748" />
+      <AbsolutePoint location="539,748" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findAllTypes.do,fail,/WEB-INF/pages/productTypeManage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="539,718" />
+      <AbsolutePoint location="788,718" />
+      <AbsolutePoint location="788,703" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,success,/showMenu.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="493,472" />
+      <AbsolutePoint location="582,472" />
+      <AbsolutePoint location="582,55" />
+      <AbsolutePoint location="650,55" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findAllTypes.do,success,/WEB-INF/pages/productTypeManage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="539,676" />
+      <AbsolutePoint location="650,676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/showRegist.do,null,/WEB-INF/pages/regist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="107,50" />
+      <AbsolutePoint location="107,-25" />
+      <AbsolutePoint location="1044,-25" />
+      <AbsolutePoint location="1044,50" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/regist.do,fail,/WEB-INF/pages/regist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1021,302" />
+      <AbsolutePoint location="1044,76" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addType.do,success,/findAllTypes.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="239,672" />
+      <AbsolutePoint location="350,672" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/showMenu.do,null,/WEB-INF/pages/menus.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="705,85" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/modifyStatus.do,success,/findAllTypes.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="444,702" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/toModifyType.do,success,/WEB-INF/pages/modifyType.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="144,902" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/toAddType.do,null,/WEB-INF/pages/addType.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="762,476" />
+      <AbsolutePoint location="950,476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/regist.do,success,/WEB-INF/pages/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,318" />
+      <AbsolutePoint location="142,318" />
+      <AbsolutePoint location="142,303" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,fail,/WEB-INF/pages/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,488" />
+      <AbsolutePoint location="112,488" />
+      <AbsolutePoint location="112,303" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

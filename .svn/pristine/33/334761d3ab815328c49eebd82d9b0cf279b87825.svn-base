@@ -1,0 +1,13 @@
+package service;
+
+import exception.ProductTypeException;
+
+public interface IProductTypeService {
+
+	/**
+	 * 添加商品类型
+	 * @param name
+	 * @throws ProductTypeException 
+	 */
+	public void addType(String name) throws ProductTypeException;
+}

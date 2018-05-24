@@ -1,0 +1,53 @@
+package dao.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import rowmapper.UserRowMapper;
+
+import util.JDBCTemplate;
+import dao.IUserDao;
+import entity.User;
+import factory.ObjectFactory;
+
+public class UserDaoImpl implements IUserDao{
+
+	private JDBCTemplate jdbcTemplate = (JDBCTemplate) ObjectFactory.getObject("jdbc");
+	
+	public void insertUser(User user) {
+		String sql = new StringBuffer()
+				.append("insert into ")
+				.append("t_user(username,password,phone,address,email) ")
+				.append("values(?,?,?,?,?) ")
+				.toString();
+		jdbcTemplate.saveOrUpdate(sql, user.getUsername(),user.getPassword(),
+					user.getPhone(),user.getAddress(),user.getEmail());
+				
+	}
+
+	public User selectUserByUsername(String username) {
+		//编写sql语句
+		String sql = new StringBuffer()
+				.append("select id,username, ")
+				.append("password,phone, ")
+				.append("address,email ")
+				.append("from t_user ")
+				.append("where username = ? ")
+				.toString();
+		List<User> users = new ArrayList<User>();
+		users = jdbcTemplate.query(sql, new UserRowMapper(), username);
+		//调用JDBCTemplate
+		return users.size()==0?null:users.get(0) ;
+	}
+	
+	public static void main(String[] args) {
+		User user = new UserDaoImpl().selectUserByUsername("张三");
+		System.out.println(user);
+		
+//		User user = new User();
+//		user.setUsername("张三");
+//		user.setPassword("123");
+//		new UserDaoImpl().insertUser(user);
+	}
+
+}

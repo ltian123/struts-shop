@@ -1,0 +1,44 @@
+三层
+	一种设计模式
+	
+	
+	表示层(视图)
+		显示逻辑
+		跟用户做数据交互
+		数据格式校验
+		调用业务层完成核心业务逻辑
+		
+	业务层(service)
+		处理核心业务逻辑
+		交叉业务逻辑(事务、日志等..)
+		调用持久层完成持久化操作
+			
+	持久层(dao)
+		处理单一的持久化操作
+		
+		
+entity			实体类
+vo				值对象
+dao				持久层接口
+dao.impl		持久层实现类
+service			业务层接口
+service.impl	业务层实现类
+service.proxy	业务层代理
+exception		异常
+util			工具类
+constant		常量接口
+action			表示层的model
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

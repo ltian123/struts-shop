@@ -1,0 +1,36 @@
+package action;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.MappingDispatchAction;
+
+import service.IUserService;
+
+import entity.User;
+import exception.UserExistException;
+import factory.ObjectFactory;
+import form.UserForm;
+
+public class UserAction extends MappingDispatchAction{
+	
+	private IUserService userService = (IUserService) ObjectFactory.getObject("userService");
+	
+	public ActionForward regist(ActionMapping mapping,ActionForm form,
+			HttpServletRequest request, HttpServletResponse response){
+		UserForm userForm = (UserForm) form;
+		User user = userForm.getUser();
+//		System.out.println(user);
+		try {
+			userService.register(user);
+			return mapping.findForward("success");
+		} catch (UserExistException e) {
+			request.setAttribute("registMsg", e.getMessage());
+			return mapping.findForward("fail");
+		}
+	}
+
+}

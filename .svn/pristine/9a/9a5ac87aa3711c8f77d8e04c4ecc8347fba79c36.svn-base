@@ -1,0 +1,14 @@
+package service;
+
+import entity.User;
+import exception.UserExistException;
+
+public interface IUserService {
+
+	/**
+	 * ÓÃ»§×¢²á
+	 * @param user
+	 * @throws UserExistException 
+	 */
+	public void register(User user) throws UserExistException;
+}

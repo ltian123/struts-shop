@@ -1,0 +1,22 @@
+package dao.impl;
+
+import util.JDBCTemplate;
+import dao.IProductDao;
+import entity.Product;
+import factory.ObjectFactory;
+
+public class ProductDaoImpl implements IProductDao{
+
+	private JDBCTemplate jdbcTemplate = (JDBCTemplate) ObjectFactory.getObject("jdbc");
+	
+	public void insertProduct(Product product) {
+		String sql = new StringBuffer()
+				.append("insert into ")
+				.append("t_product(name,price,type_id) ")
+				.append("values(?,?,?) ")
+				.toString();
+		jdbcTemplate.saveOrUpdate(sql, product.getName(),product.getPrice(),product.getTypeId());
+	}
+
+	
+}
